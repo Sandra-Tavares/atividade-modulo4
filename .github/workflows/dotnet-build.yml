@@ -1,0 +1,19 @@
+name: Push Event Workflow
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run a custom script
+      run: |
+        echo "Running a custom script on push event"
+        ./scripts/custom-script.sh
